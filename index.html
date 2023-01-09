@@ -49,7 +49,7 @@
               <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
                     <ul>
-                        <li>Mock COP26 summit, where the students roleplayed as dignitaries from different countries to discuss and come up with a resolution paper on sustainability</li>
+                        <li>Mock COP summit, where the students roleplayed as dignitaries from different countries to discuss and come up with a resolution paper on sustainability</li>
                         <li>Hands-on sessions where students study the urban heat island effect, study how sensors and the Internet of Things (IoT) can help with sustainable practices and how artificial intelligence and machine learning can be used for recycling and learn the science behind fuel cells</li>
                         <li>Design sprint on encouraging recycling in school</li>
                         <li>Learning Journey to Net Zero Energy Building at the National University of Singapore</li>
@@ -70,65 +70,77 @@
         // Initialise all elements
         var displayDiv = document.getElementById("displayDiv")
 
-        let allContent = [
+        let typicalContent = [
             {
                 "title": " Interdisciplinary Lessons",
                 "imageID": "1JOFtpVsdssZviMPLmCPIsyo6zXkXk2Vl",
-                "description": "Add in some description here"
-            },
-            {
-                "title": "Hands-on Sessions",
-                "imageID": "15qgcCyKHMjhDPWoGr4TQb1E1eaZ50eW6",
-                "description": "Add in some description here"
-            },
-            {
-                "title": "Design Sprints",
-                "imageID": "1BGT6ypu3JdsaDfvQrzXaoE-vcV-rcIYz",
-                "description": "Add in some description here"
+                "description": "In the spirit of interdisciplinary learning, students are expose to the various sustainability issues through various disciplinary lenses so as to equip themselves with the knowledge and skills required to examine issues from an interdisciplinary approach.<br><br>These lessons are conducted by Mr Chan, Mr Shiau and also other invited teachers from other departments."
             },
             {
                 "title": "Sharing Sessions",
                 "imageID": "1-n9HmrQL31q1-npDGnuOXRaYXwi1lUHz",
-                "description": "Add in some description here"
-            },
-            {
-                "title": "Visit to Net Zero Energy Building",
-                "imageID": "1qctxypG-B_V5m8yI2ipDcG9XJzps8Kjl",
-                "description": "Visit to Net Zero Energy Building at NUS"
+                "description": "To foster self-directed learning and sharing of knowledge, each student shares a short 5 to 10 minutes sharing of what they have read pertaining to sustainability and green technology that they have found or some takeaways that they have learnt from attending external events about sustainability."
             },
             {
                 "title": "Talks by Experts",
                 "imageID": "18IGroQC65snmBhyZdpLeB97rv9N39rMJ",
-                "description": "Add in some description here"
+                "description": "Invited speakers provide more nuance and depth in knowledge for our students and enhance the discussion of a specific sub-topic of sustainability."
             },
+        ]
+
+        let groupProjects = [
             {
                 "title": "Elective Seminars",
                 "imageID": "1q2iq960ec_JkM7OnNXZBUJWN7WqbrRfX",
-                "description": "Add in some description here"
+                "description": "Through the guidance of teachers in the designing of their seminar, students work in groups to dive deeper into a research area that they are interested in and design meaningful activities and discussions for their classmates."
             },
             {
                 "title": "Sustainable Cities Poster Presentation",
                 "imageID": "1B1ZTeaL6z6D-jzj4TmZahdg0LfA_fyPY",
-                "description": "Add in some description here"
+                "description": "At the end of the programme, students will apply their knowledge to design a sustainable city with given economic and geographical constraints. Groups will present their work in the class through a poster presentation."
+            },
+        ]
+
+        let experientialLearning = [
+            {
+                "title": "Hands-on Sessions",
+                "imageID": "15qgcCyKHMjhDPWoGr4TQb1E1eaZ50eW6",
+                "description": "Hands-on sessions are integrated into the curriculum to provide students with the hands-on experience to experiment and discover about the applications of green technology."
+            },
+            {
+                "title": "Mock COP",
+                "imageID": "1cIjy3gIWDPYqxMi_t0GbI_Q39KnljCDm",
+                "description": "Similar to Model United Nations, Mock COP Summit aims to allow students to experience the complexities of policy planning and negotiations at an international level. At the end of the Summit, students should be able to gain greater appreciation of constraints, political responsibilities of different nations and their varying policy priorities."
+            },
+            {
+                "title": "Learning Journey: Visit to Net Zero Energy Building",
+                "imageID": "1qctxypG-B_V5m8yI2ipDcG9XJzps8Kjl",
+                "description": "Students will get the opportunity to participate in learning journeys organised for them where they will speak to experts in the field and learn more about how sustainability is being practiced and some of its challenges."
+            },
+        ]
+
+        let pastEvents = [
+            {
+                "title": "GOOD Meat Tasting",
+                "imageID": "1VUT0YyzZZfUpZp9W0zQezg5oeqVx61qP",
+                "description": "To expose students to cutting-edge technologies, a student was given the chance to try out cultivated meat (previously known as lab-grown meat) developed by GOOD Meat."
             },
             {
                 "title": "Minister Visit",
                 "imageID": "1elcC41ArcqRIS_eDmBneRVtFuEFQ-49D",
-                "description": "Add in some description here"
-            },
-            {
-                "title": "GOOD Meat Tasting",
-                "imageID": "1VUT0YyzZZfUpZp9W0zQezg5oeqVx61qP",
-                "description": "Add in some description here"
+                "description": "Students can get a chance to interact with Ministers when they visit RI and engage in dialogue with them."
             },
         ]
+
 
         // Clear displayDiv
         displayDiv.innerHTML = ''
         
+        // Insert innerHTML for Group Events
+
         var innerHTML = '<div class="row row-cols-1">'
 
-        allContent.forEach((dictionary, index) => {
+        typicalContent.forEach((dictionary, index) => {
         innerHTML += `
         <div class="col mt-3">
             <div class="card border-dark h-100 style="width: 18rem;">
@@ -143,8 +155,80 @@
         });
 
         // Close up the card columns Div
-        innerHTML += "</div>"
+        innerHTML += "</div><br>"
 
+        // Insert innerHTML for Group Projects
+
+        innerHTML += '<br><h3 class="text-center">Group Projects</h3>'
+
+        innerHTML += '<div class="row row-cols-1">'
+
+        experientialLearning.forEach((dictionary, index) => {
+        innerHTML += `
+        <div class="col mt-3">
+            <div class="card border-dark h-100 style="width: 18rem;">
+            <div class="card-body text-center">
+                <h5 class="card-title">${dictionary['title']}</h5>
+                <p class="card-text">${dictionary['description']}</p>
+                <img src="https://drive.google.com/uc?export=view&id=${dictionary['imageID']}" width="100%">
+            </div>
+            </div>
+        </div>
+        `
+        });
+
+        // Close up the card columns Div
+        innerHTML += "</div><br>"
+
+
+        // Insert innerHTML for Experiential Learning
+
+        innerHTML += '<br><h3 class="text-center">Experiential Learning</h3>'
+
+        innerHTML += '<div class="row row-cols-1">'
+
+        experientialLearning.forEach((dictionary, index) => {
+        innerHTML += `
+        <div class="col mt-3">
+            <div class="card border-dark h-100 style="width: 18rem;">
+            <div class="card-body text-center">
+                <h5 class="card-title">${dictionary['title']}</h5>
+                <p class="card-text">${dictionary['description']}</p>
+                <img src="https://drive.google.com/uc?export=view&id=${dictionary['imageID']}" width="100%">
+            </div>
+            </div>
+        </div>
+        `
+        });
+
+        // Close up the card columns Div
+        innerHTML += "</div><br>"
+
+
+        // Insert innerHTML for Past Events
+
+        innerHTML += '<br><h3 class="text-center">Past Events</h3>'
+
+        innerHTML += '<div class="row row-cols-1">'
+
+        pastEvents.forEach((dictionary, index) => {
+        innerHTML += `
+        <div class="col mt-3">
+            <div class="card border-dark h-100 style="width: 18rem;">
+            <div class="card-body text-center">
+                <h5 class="card-title">${dictionary['title']}</h5>
+                <p class="card-text">${dictionary['description']}</p>
+                <img src="https://drive.google.com/uc?export=view&id=${dictionary['imageID']}" width="100%">
+            </div>
+            </div>
+        </div>
+        `
+        });
+
+        // Close up the card columns Div
+        innerHTML += "</div><br>"        
+
+        // Set HTML
         displayDiv.innerHTML = innerHTML
     </script>
 </body>
